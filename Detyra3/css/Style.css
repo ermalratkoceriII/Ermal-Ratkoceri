@@ -1,0 +1,30 @@
+div{
+    
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: lightskyblue;
+}
+
+img{
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    height: 100px;
+}
+
+p{
+    display: inline;
+}
+
+.firstp{
+    padding-left: 1000px;  
+}
+
+#second{
+    color: red;
+}
+
+input{
+border-radius: 10px;
+}
