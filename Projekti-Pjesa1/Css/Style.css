@@ -321,7 +321,6 @@ footer a{
     border: 1px solid black;
 }
 
-
 .box3:before{
     content: '';
     position: absolute;
@@ -332,4 +331,77 @@ footer a{
     transform: skew(2deg,2deg);
     z-index: -1;
     background: linear-gradient(315deg,#ff0057,#e64a19);
+}
+
+
+.LoginRegister{
+    display: flex;
+    width: 300px;
+    position: relative;
+    height: 300px;
+    background: #060c21;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.LoginRegister:before{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    transform: skew(2deg,2deg);
+    z-index: -1;
+    background: linear-gradient(315deg,#ff0057,#e64a19);
+}
+
+
+.LoginBox{
+    height: 100%;
+    width: 100%;
+}
+
+.LoginButtons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.LoginButtons button{
+    color: white;
+    border: none;
+    height: 30px;
+    width: 100%;
+    margin-bottom: auto;
+    background: #060c21;
+}
+
+.Login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   justify-content: space-evenly;
+    color: white;
+    height: 60%;
+}
+
+.Login input{
+    -webkit-border-radious: 10px;
+    border-radius: 5px;
+    border: none;
+    height: 15%;
+    width: 60%;
+}
+
+.Login button{
+    background: green;
+    width: 20%;
+    height: 15%;
+    color: white;
+    -webkit-border-radious: 10px;
+    -moz-border-radious: 10px;
+    border-radius: 5px;
+    border: none;
 }
