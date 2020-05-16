@@ -28,7 +28,6 @@ function hidebox3(){
 
 window.onLoad = hideBox1(),hidebox2(),hidebox3();
 
-
 document.getElementsByClassName('box')[0].addEventListener('click',function(){
     var sliderList= document.getElementsByClassName('content');
     var index = 0;
