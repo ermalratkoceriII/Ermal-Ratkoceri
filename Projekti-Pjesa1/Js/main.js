@@ -6,7 +6,6 @@ function hideBox1(){
     sliderList[1].classList.add('hide');
     sliderList[2].classList.add('hide');
     sliderList[3].classList.add('hide');
- 
 }
 
 function hidebox2(){
