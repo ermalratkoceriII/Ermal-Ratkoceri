@@ -426,3 +426,109 @@ footer a{
 #MB2{
     border-bottom: 1px solid grey;
 }
+
+@media only screen and (max-width :600px){
+
+
+
+    .header img{
+        height: 50px;
+        width: 50px;
+    }
+
+    .header{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        justify-content: start;
+    }
+
+    .main{
+        margin: 0;
+        padding: 0;
+    }
+
+    .content h3{
+        font-size: 13px;
+    }
+    .content p{
+        font-size: 12px;
+    }
+        .content a{
+        position: relative;
+        text-decoration: none;
+        border: 1px solid white;
+        display: inline-block;
+        color: white;
+        visibility: visible;
+        transition: none;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .content2 a{
+        position: relative;
+        text-decoration: none;
+        border: 1px solid white;
+        display: inline-block;
+        color: white;
+        visibility: visible;
+        transition: none;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .content3 a{
+        position: relative;
+        text-decoration: none;
+        border: 1px solid white;
+        display: inline-block;
+        color: white;
+        visibility: visible;
+        transition: none;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
+    .MainContainer{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        left: 7%;
+    }
+
+    .main{
+        padding: 0;
+        margin: 0;
+    }
+
+    .content #HomeH{
+        font-size: 20px;
+    }
+    .content #HomeP{
+        font-size: 15px;
+    }
+
+    #HomeB{
+        width: 70%;
+    }
+
+    .navbar{
+        transition: none;
+    }
+
+    .navbar:hover{
+        background: none;
+    }
+
+    .navbar-bar{
+        justify-content: start;
+        font-size: 10px;
+    }
+    .navbar:hover .link-text{
+        display: none;
+    }
+
+}

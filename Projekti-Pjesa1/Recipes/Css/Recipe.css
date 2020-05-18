@@ -122,3 +122,38 @@ main{
     width: 200px;
     height: 100px;
 }
+
+    @media only screen and (max-width :600px){
+
+        .box{
+            overflow: hidden;
+            flex-direction: column;
+        }
+    
+        .Content h3{
+            font-size: 16px;
+        }
+        .Content p{
+            font-size: 15px;
+        }
+    
+        .Container{
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar{
+            transition: none;
+        }
+    
+        .navbar:hover{
+            background: none;
+        }
+    
+        .navbar-bar{
+            justify-content: start;
+            font-size: 10px;
+        }
+        .navbar:hover .link-text{
+            display: none;
+        }
+    }
