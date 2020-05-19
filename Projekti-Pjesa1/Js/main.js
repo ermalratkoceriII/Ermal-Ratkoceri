@@ -28,73 +28,57 @@ function hidebox3(){
 
 window.onLoad = hideBox1(),hidebox2(),hidebox3();
 
-document.getElementsByClassName('box')[0].addEventListener('click',function(){
-    var sliderList= document.getElementsByClassName('content');
-    var index = 0;
-    for(var div of sliderList){
-        index++;
-        console.log(index);
-        if(div.classList.contains('show') && index < 4){
-            div.classList.remove('show');
-            div.classList.add('hide');
-            div.nextElementSibling.classList.remove('hide');
-            div.nextElementSibling.classList.add('show');
-            break;
-        }
-        else if(div.classList.contains('show') && index == 4){
-            div.classList.remove('show');
-            div.classList.add('hide');
-            sliderList[0].classList.remove('hide');
-            sliderList[0].classList.add('show');
-            break;
-        }
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function next(n){
+    showSlides(slideIndex +=n);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("content");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
     }
-})
+    slides[slideIndex-1].style.display = "block";
+}
 
-document.getElementsByClassName('box2')[0].addEventListener('click',function(){
-    var sliderList= document.getElementsByClassName('content2');
-    var index = 0;
-    for(var div of sliderList){
-        index++;
-        console.log(index);
-        if(div.classList.contains('show') && index < 4){
-            div.classList.remove('show');
-            div.classList.add('hide');
-            div.nextElementSibling.classList.remove('hide');
-            div.nextElementSibling.classList.add('show');
-            break;
-        }
-        else if(div.classList.contains('show') && index == 4){
-            div.classList.remove('show');
-            div.classList.add('hide');
-            sliderList[0].classList.remove('hide');
-            sliderList[0].classList.add('show');
-            break;
-        }
+
+var slideIndex2 = 1;
+showSlides2(slideIndex2);
+
+function next2(n){
+    showSlides2(slideIndex2 +=n);
+}
+
+function showSlides2(n) {
+    var i;
+    var slides = document.getElementsByClassName("content2");
+    if (n > slides.length) {slideIndex2 = 1}
+    if (n < 1) {slideIndex2 = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
     }
-})
+    slides[slideIndex2-1].style.display = "block";
+}
 
-document.getElementsByClassName('box3')[0].addEventListener('click',function(){
-    var sliderList= document.getElementsByClassName('content3');
-    var index = 0;
-    for(var div of sliderList){
-        index++;
-        console.log(index);
-        if(div.classList.contains('show') && index < 4){
-            div.classList.remove('show');
-            div.classList.add('hide');
-            div.nextElementSibling.classList.remove('hide');
-            div.nextElementSibling.classList.add('show');
-            break;
-        }
-        else if(div.classList.contains('show') && index == 4){
-            div.classList.remove('show');
-            div.classList.add('hide');
-            sliderList[0].classList.remove('hide');
-            sliderList[0].classList.add('show');
-            break;
-        }
+var slideIndex3 = 1;
+showSlides3(slideIndex3);
+
+function next3(n){
+    showSlides3(slideIndex3 +=n);
+}
+
+function showSlides3(n) {
+    var i;
+    var slides = document.getElementsByClassName("content3");
+    if (n > slides.length) {slideIndex3 = 1}
+    if (n < 1) {slideIndex3 = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
     }
-})
-
-
+    slides[slideIndex3-1].style.display = "block";
+}
