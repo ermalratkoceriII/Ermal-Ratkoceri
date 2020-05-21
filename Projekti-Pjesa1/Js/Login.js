@@ -46,6 +46,9 @@ function validateRegister(){
 
     if(username.value.trim() == "" && password.value.trim() == "" &&email.value.trim() == "" ){
         alert('Please fill in your info');
+    }else if(email.value.trim() == ""){
+        alert('email cant be blank');
+        email.focus();
     }
     else if(username.value.length < 6){
         alert('Username needs to be more than 6 characters');
@@ -53,9 +56,6 @@ function validateRegister(){
     else if(username.value.trim() == ""){
         alert('Username cant be blank');
         username.focus();
-    }else if(email.value.trim() == ""){
-        alert('email cant be blank');
-        email.focus();
     } else if(password.value.trim() == ""){
         alert('Password cant be blank');
         password.focus();
@@ -64,6 +64,16 @@ function validateRegister(){
         alert('Password needs to be more than 8 characters');
     }
     else{
-        alert('User Created!');
+        validateemail();
     }
 }
+
+function validateemail(){  
+var email=document.getElementById('email');  
+var x = email.value;
+var atposition=x.indexOf("@");  
+var dotposition=x.lastIndexOf(".");  
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+  alert("Please enter a valid e-mail address eg. exampleemail@gmail.com");  
+  }  
+} 
