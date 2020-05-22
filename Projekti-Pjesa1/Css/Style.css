@@ -390,7 +390,7 @@ footer a{
 .Login input{
     -webkit-border-radious: 10px;
     border-radius: 5px;
-    border: none;
+    border: solid grey 2px;
     height: 10%;
     width: 60%;
 }
