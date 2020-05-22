@@ -71,9 +71,12 @@ function validateRegister(){
 function validateemail(){  
 var email=document.getElementById('email');  
 var x = email.value;
-var atposition=x.indexOf("@");  
-var dotposition=x.lastIndexOf(".");  
-if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
-  alert("Please enter a valid e-mail address eg. exampleemail@gmail.com");  
-  }  
+
+var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}/;
+
+if(!x.match(pattern)){
+    alert("Please write a valid e-mail, eg example@gmail.com");
+}
+
+
 } 
