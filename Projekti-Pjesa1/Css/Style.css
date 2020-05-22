@@ -181,7 +181,8 @@ footer a{
 
 .content a:hover{
     color: black;
-    background:white ;
+    background:white;
+    cursor: pointer;
 }
 
 .box:before{
@@ -239,6 +240,7 @@ footer a{
 .content2 a:hover{
     color: black;
     background:white ;
+    cursor: pointer;
 }
 
 
@@ -308,6 +310,7 @@ footer a{
 .content3 a:hover{
     color: black;
     background:white ;
+    cursor: pointer;
 }
 
 
