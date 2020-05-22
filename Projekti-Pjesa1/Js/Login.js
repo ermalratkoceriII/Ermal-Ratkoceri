@@ -47,6 +47,7 @@ function validateRegister(){
     var userpattern = /[A-Z]+[a-z]{6,20}/
     var passpattern = /[A-Z]+[a-z]{8,20}/
     var emailpattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}/;
+    var emailpattern2 = /^[^ ]+@[a-z]{3,7}/;
 
     if(username.value.trim() == "" && password.value.trim() == "" &&email.value.trim() == "" ){
         alert('Please fill in your info');
@@ -55,8 +56,11 @@ function validateRegister(){
         email.focus();
     }else if(username.value.trim() == ""){
         alert('Username cant be blank');
-        username.focus();
-    }else if(!email.value.match(emailpattern)){
+        username.focus();   
+    }else if(!email.value.match(emailpattern2)){
+        alert("Please write a valid e-mail, eg example@gmail.com");
+    }
+    else if(!email.value.match(emailpattern)){
         alert("Please write a valid e-mail, eg example@gmail.com");
     }
     else if(!username.value.match(userpattern) || username.value.length > 20){
