@@ -421,13 +421,24 @@ footer a{
     position: relative;
 }
 
+.Login button:hover{
+    cursor: pointer;
+}
+
 #MB1{
     border-bottom: 1px solid grey;
     border-right: 1px solid grey;
 }
+#MB1:hover{
+    cursor: pointer;
+}
 
 #MB2{
     border-bottom: 1px solid grey;
+}
+
+#MB2{
+    cursor: pointer;
 }
 
 @media only screen and (max-width :600px){
