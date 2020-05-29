@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ushtrimet 9</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="header">
+    <img id="ubtlogo" class="headerPhoto" src="Ubt.png" alt="UBT Logo" />
+    <ul class="headerList">
+      <li id="item">Home</li>
+      <li id="item">About us</li>
+      <li>Contact</li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="link-container">
+      <a id="firstA" href="#">Login</a>
+      <a href="#">Register</a>
+    </div>
+    <form id="mainForm" action="">
+      <div class="register forms form-style">
+        <label for="">Name:</label>
+        <input type="text" class="input" id="Name" placeholder="Name..." />
+        <label for="">Lastname:</label>
+        <input type="text" class="input" id="LastName"placeholder="LastName..." />
+        <label for="">Password:</label>
+        <input type="text" class="input" id="Password" placeholder="Password..." />
+        <label for="">Confirm Password:</label>
+        <input type="text" class="input" id="CPassword" placeholder="Confirm Password..." />
+        <label for="">Birthday:</label>
+        <input type="text" class="input" id="Birthday" placeholder="Birthday..." />
+        <input id="submit" type="submit" class="input submit" value="Login" onclick="validate()" />
+      </div>
+    </form>
+  </div>
+  <div class="footer">
+    <i>&copy;</i>
+
+    <h3>UBT - Maj 2020</h3>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
