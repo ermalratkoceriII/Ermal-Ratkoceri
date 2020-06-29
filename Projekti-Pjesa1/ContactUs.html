@@ -63,36 +63,25 @@
     </nav>
 
     <main>
-       <div class="box">
-           <div class="content">
-                <h3>---Send us feedback And some Rating---</h3>
-                <p>Hello cooking enthusiasts!
-                    <br>  <br>
-                    We are grateful that you chose
-                    our website to learn new and 
-                    <br> 
-                    delicious recipes to make at 
-                    home. 
-                    We would love to hear
-                    from you
-                    <br>
-                    about your experience
-                    on our website, and we would also
-                    love
-                    <br>
-                    to hear your ideas of how our 
-                    website can become even better!
-                    <br>
-                    We would also like to get your
-                    opinion on new recipes and how
-                    <br>
-                     can we enhance our recipes so they
-                    are more delicious than ever.
-                    <br>
-                    Contact us at <b>Deliciousness@gmail.com</b>
-                    on <a href="https://mail.google.com/" target="_blank">Gmail</a>
-                </p>
+        <div class="ContactContainer" id="ContactContainer">
+       <div class="box" id="ContactBox">
+           <div class="content" id="ContactContent">
+                <h3>Send us your ticket!</h3>
+                <p>Hello cooking enthusiasts!</br>
+                    We would love to hear about your recipes!</br>
+                    Open a ticket and let us know which recipes
+                    should we be adding to our website.
+                </br>
+            </p>
            </div>
+           <div class="Contact">
+            <label>Username:</label>
+            <input type="text" placeholder=" username..." id="User">
+            <label>Recipe</label>
+            <textarea type="textarea" id='Recipe' placeholder="Write your recipe details!"></textarea>
+            <button onclick="CreateTicket()">Post</button>        
+       </div>
+       </div>
        </div>
     </main>
 
@@ -100,6 +89,6 @@
         <h3> Always start out with a larger pot than what you think you need. — Julia Child </h3>
         <p><b>@Ubt 2020 - <a href="https://github.com/ermalratkoceriII/Ermal-Ratkoceri">GitRepo</b></p>
     </footer>
-   
+    <script src="Js/Contact.js"></script>
 </body>
 </html>
