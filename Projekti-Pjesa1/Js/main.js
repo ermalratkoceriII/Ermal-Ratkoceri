@@ -1,6 +1,6 @@
 
 function hideBox1(){
-    var sliderList = document.getElementsByClassName('content');
+    var sliderList = document.getElementsByName('C1');
     
     sliderList[0].classList.add('show');
     sliderList[1].classList.add('hide');
@@ -9,7 +9,7 @@ function hideBox1(){
 }
 
 function hidebox2(){
-    var sliderList = document.getElementsByClassName('content2');
+    var sliderList = document.getElementsByName('C2');
      
     sliderList[0].classList.add('show');
     sliderList[1].classList.add('hide');
@@ -18,7 +18,7 @@ function hidebox2(){
 }
 
 function hidebox3(){
-    var sliderList = document.getElementsByClassName('content3');
+    var sliderList = document.getElementsByName('C3');
      
     sliderList[0].classList.add('show');
     sliderList[1].classList.add('hide');
@@ -37,7 +37,7 @@ function next(n){
 
 function showSlides(n) {
     var i;
-    var slides = document.getElementsByClassName("content");
+    var slides = document.getElementsByName("C1");
     if (n > slides.length) {slideIndex = 1}
     if (n < 1) {slideIndex = slides.length}
     for (i = 0; i < slides.length; i++) {
@@ -56,7 +56,7 @@ function next2(n){
 
 function showSlides2(n) {
     var i;
-    var slides = document.getElementsByClassName("content2");
+    var slides = document.getElementsByName("C2");
     if (n > slides.length) {slideIndex2 = 1}
     if (n < 1) {slideIndex2 = slides.length}
     for (i = 0; i < slides.length; i++) {
@@ -74,7 +74,7 @@ function next3(n){
 
 function showSlides3(n) {
     var i;
-    var slides = document.getElementsByClassName("content3");
+    var slides = document.getElementsByName("C3");
     if (n > slides.length) {slideIndex3 = 1}
     if (n < 1) {slideIndex3 = slides.length}
     for (i = 0; i < slides.length; i++) {
