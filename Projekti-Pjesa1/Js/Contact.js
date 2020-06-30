@@ -25,7 +25,31 @@ function CreateTicket(){
 
     createBox.style.maxWidth="725px";
     createDiv.style.height="75%";
+
+    var ContactButtons = document.getElementsByName('ContactButtons');
+
+    ContactButtons[0].classList.add('hide');
+    ContactButtons[0].classList.remove('show');
+    ContactButtons[1].classList.remove('hide');
+    ContactButtons[1].classList.add('show');
+
+    var count = document.getElementsByClassName('content').length;
+    console.log(count);
+
+    if(count > 1){
+        Container.removeChild(createBox);
+        Container.replaceChild(createBox, Container.childNodes[2]);
+    }
 }
+
+function hideButton(){
+    var ContactButtons = document.getElementsByName('ContactButtons');
+
+    ContactButtons[0].classList.add('show');
+    ContactButtons[1].classList.add('hide');
+}
+
+window.onLoad = hideButton();
 
 var UserTicket={
     Username:'',
