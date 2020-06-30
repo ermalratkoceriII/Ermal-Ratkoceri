@@ -33,6 +33,27 @@ function CreateTicket(){
     ContactButtons[1].classList.remove('hide');
     ContactButtons[1].classList.add('show');
 
+    var Useri = document.getElementById('User');
+    var TextBox = document.getElementById('Recipe');
+
+    if(Useri.value.trim() == "")
+    {
+        alert("Pleas fill in username!");
+        var count = document.getElementsByClassName('content').length;
+        console.log(count);
+        if(count > 1){
+            Container.removeChild(createBox);
+        }
+    }if(TextBox.value.trim() == "")
+    {
+        alert("Please fill in the recipe!");
+        var count = document.getElementsByClassName('content').length;
+        console.log(count);
+        if(count > 1){
+            Container.removeChild(createBox);
+        }
+    }else if(!Useri.value.trim() == ""){
+        
     var count = document.getElementsByClassName('content').length;
     console.log(count);
 
@@ -40,6 +61,10 @@ function CreateTicket(){
         Container.removeChild(createBox);
         Container.replaceChild(createBox, Container.childNodes[2]);
     }
+    }
+
+
+    
 }
 
 function hideButton(){
