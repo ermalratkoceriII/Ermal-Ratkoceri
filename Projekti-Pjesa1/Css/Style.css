@@ -264,6 +264,8 @@ footer a{
     border: solid grey 2px;
     height: 10%;
     width: 60%;
+    color:white;
+    background: #060c21;
 }
 
 .LoginButton{
@@ -277,7 +279,7 @@ footer a{
 }
 
 .Login button{
-    background: green;
+    background: linear-gradient(315deg,#ff0057,#e64a19);
     -webkit-border-radious: 10px;
     -moz-border-radious: 10px;
     border-radius: 5px;
