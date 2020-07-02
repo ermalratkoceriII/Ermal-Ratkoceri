@@ -136,12 +136,12 @@ footer a{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
 }
 
 .content{
     position: realtive;
     padding: 20px;
+    overflow: auto;
 }
 
 .content h3{
