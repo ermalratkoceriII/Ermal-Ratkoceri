@@ -63,7 +63,7 @@
     </nav>
 
     <main>
-        <div class="ContactContainer" id="ContactContainer">
+        <div class="MainContainer" id="ContactContainer">
        <div class="box" id="ContactBox">
            <div class="content" id="ContactContent">
                 <h3>Send us your ticket!</h3>
@@ -74,15 +74,15 @@
                 </br>
             </p>
            </div>
-           <div class="Contact">
-            <label>Username:</label>
-            <input type="text" placeholder=" username..." id="User">
-            <label>Recipe</label>
-            <textarea type="textarea" id='Recipe' placeholder="Write your recipe ingredients!"></textarea>
-            <button name="ContactButtons" onclick="CreateTicket()">Post</button>  
-            <button name="ContactButtons" id="EditButon" onclick="CreateTicket()">Edit</button>           
        </div>
-       </div>
+       <div class="box" id="Contact">
+        <label>Username:</label>
+        <input type="text" placeholder=" username..." id="User">
+        <label>Recipe</label>
+        <textarea type="textarea" id='Recipe' placeholder="Write your recipe ingredients! (154 chars)"></textarea>
+        <button name="ContactButtons" onclick="CreateTicket()">Post</button>  
+        <button name="ContactButtons" id="EditButon" onclick="CreateTicket()">Edit</button>           
+   </div>
        </div>
     </main>
 

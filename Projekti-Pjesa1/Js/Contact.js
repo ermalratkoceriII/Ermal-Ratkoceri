@@ -23,7 +23,7 @@ function CreateTicket(){
     createBox.className='box';
     createDiv.className='content';
 
-    createBox.style.maxWidth="725px";
+
     createDiv.style.height="75%";
 
     var ContactButtons = document.getElementsByName('ContactButtons');
