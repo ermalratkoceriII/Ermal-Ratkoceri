@@ -8,8 +8,6 @@ function Login(){
     Login[1].classList.remove('show');
 }
 
-
-
 window.onLoad = Login();
 
 function Register(){
@@ -56,7 +54,6 @@ function validateLogin(){
         username.style.borderColor = 'Green';
         password.style.borderColor = 'Green';
     }
-
 }
 
 function validateRegister(){

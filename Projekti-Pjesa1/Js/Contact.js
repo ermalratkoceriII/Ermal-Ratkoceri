@@ -28,11 +28,6 @@ function CreateTicket(){
 
     var ContactButtons = document.getElementsByName('ContactButtons');
 
-    ContactButtons[0].classList.add('hide');
-    ContactButtons[0].classList.remove('show');
-    ContactButtons[1].classList.remove('hide');
-    ContactButtons[1].classList.add('show');
-
     var Useri = document.getElementById('User');
     var TextBox = document.getElementById('Recipe');
 
@@ -61,10 +56,11 @@ function CreateTicket(){
         Container.removeChild(createBox);
         Container.replaceChild(createBox, Container.childNodes[2]);
     }
+    ContactButtons[0].classList.add('hide');
+    ContactButtons[0].classList.remove('show');
+    ContactButtons[1].classList.remove('hide');
+    ContactButtons[1].classList.add('show');
     }
-
-
-    
 }
 
 function hideButton(){

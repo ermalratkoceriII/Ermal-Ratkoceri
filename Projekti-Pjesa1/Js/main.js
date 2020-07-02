@@ -1,4 +1,3 @@
-
 function hideBox1(){
     var sliderList = document.getElementsByName('C1');
     
