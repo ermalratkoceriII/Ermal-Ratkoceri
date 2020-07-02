@@ -118,7 +118,7 @@ footer a{
     grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
     grid-gap: 0 40px;
     grid-template-rows: 100px 200px;
-    left: 6em;
+    left: 5em;
 }
 
 .show{
