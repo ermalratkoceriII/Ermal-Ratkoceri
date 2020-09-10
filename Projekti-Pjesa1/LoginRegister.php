@@ -10,11 +10,41 @@
 <?php
 require_once 'core/Init.php';
 
-$user = DB::getInstance()->insert('users', array(
-    'username' => 'Dale',
-    'password' => 'password',
-    'salt' => 'salt'
-));
+
+if(Input::exists()){
+    if(Token::check(Input::get('token'))){
+
+    $validate = new Validate();
+    $validation = $validate->check($_POST, array(
+        'Username' => array(
+            'required' => true,
+            'min' => 2,
+            'max' => 20,
+            'unique' => 'users'
+        ),
+        'email' => array(
+            'required' => true,
+            'min' => 9,
+            'max' => 50
+        ),
+        'Password' => array(
+            'required' => true,
+            'min' => 3,
+            'max' => 20
+        )
+    ));
+
+    if($validation->passed()){
+        Session::flash('success', 'You registered successfully!');
+        header('Location : index.php');
+    } else {
+        foreach($validation->errors() as $error){
+            echo $error, '<br>';
+            }
+        }
+    }
+}
+
 ?>
 
 
@@ -87,19 +117,22 @@ $user = DB::getInstance()->insert('users', array(
         </div>
     </div>
 </div>
-<div class="LoginRegister">
-    <div class="LoginBox">
-        <div class="Login" >     
-             <label>Email:</label>
-            <input type="email" placeholder="email..." id="email">
+    <div class="LoginRegister">
+        <div class="LoginBox">
+        <form action="" method="post">  
+            <div class="Login">   
                 <label>Username:</label>
-                <input type="text" placeholder=" username..." id="RegUser">
+                <input type="text" placeholder=" username..." id="Username" value="<?php echo escape(Input::get('Username')); ?>" name="Username">
+                <label>Email:</label>
+                <input type="email" name="email" placeholder="email..." value="<?php echo escape(Input::get('email')); ?>" id="email">
                 <label>Password:</label>
-                <input type="Password" placeholder=" password..." id="RegPass">
-                <button onclick="validateRegister()" id="LRButton">Register</button>        
-           </div>
-</div>
-</div>
+                <input type="Password" placeholder=" password..." id="Password" value="<?php echo escape(Input::get('Password')); ?>" name="Password">
+                <input type="hidden" name="token" value="<?php echo Token::generate();?>">
+                <button onclick="validateRegister()" id="LRButton">Register</button>     
+            </div>
+            </form>
+        </div>
+    </div>
 </div>
     </main>
     <footer>

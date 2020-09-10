@@ -35,8 +35,8 @@ function validateLogin(){
 }
 
 function validateRegister(){
-    var username = document.getElementById('RegUser');
-    var password = document.getElementById('RegPass');
+    var username = document.getElementById('Username');
+    var password = document.getElementById('Password');
     var email = document.getElementById('email');
 
     var userpattern = /[A-Z]+[a-z]{6,20}/

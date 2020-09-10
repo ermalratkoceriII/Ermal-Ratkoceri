@@ -6,6 +6,15 @@
     <title>Home</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+<?php 
+
+require_once 'core/Init.php';
+
+if(Session::exists('success')){
+    echo Session::flash('success');
+}
+
+?>
 <body>
         <div class="header">
             <img src="Logo2.png" alt="Logoja">
