@@ -10,7 +10,11 @@
 <?php
 require_once 'core/Init.php';
 
-DB::getInstance();
+$user = DB::getInstance()->insert('users', array(
+    'username' => 'Dale',
+    'password' => 'password',
+    'salt' => 'salt'
+));
 ?>
 
 
