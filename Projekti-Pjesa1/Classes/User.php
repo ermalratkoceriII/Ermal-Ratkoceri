@@ -36,7 +36,6 @@ class User {
                 echo 'ok';
             }
         }
-        
         return false;
     }
 
