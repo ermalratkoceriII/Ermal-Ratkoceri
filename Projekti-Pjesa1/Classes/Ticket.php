@@ -1,6 +1,7 @@
 <?php 
 class Ticket{
-    private $_db;
+    private $_db,
+            $_data;
 
     public function __construct($tickets = null){
         $this->_db = DB::getInstance();
@@ -11,4 +12,13 @@ class Ticket{
             throw new Exception ('There was a problem with creating your Ticket.');
         }
     }
+
+    public function exists(){
+        return (!empty($this->_data)) ? true : false;
+    }
+
+    public function data(){
+        return $this->_data;
+    }
+
 }

@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-
+<?php 
+  require_once 'core/Init.php';
+?>
 <body>
         <div class="header">
             <img src="Logo2.png" alt="Logoja">
@@ -69,10 +71,18 @@
 
     <div class="box">
             <div class="content">
-
+            <?php
+       
+       require_once 'core/Init.php';
+       $db = DB::getInstance();
+       $myArray = $db->get('tickets', ['1', '=', '1'])->results();
+                
+       ?> 
+          <p><?php print_r($myArray);?> </p>
+        <?php
+        ?>
             </div>
         </div>
-
     </main>
     <footer>
         <h3> Always start out with a larger pot than what you think you need. — Julia Child </h3>
