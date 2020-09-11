@@ -3,14 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>Login & Register</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
+<?php
+require_once 'core/Init.php';
+
+if(Input::exists()){
+    if(Token::check(Input::get('token'))){
+
+    $validate = new Validate();
+    $validation = $validate->check($_POST, array(
+        'Username' => array(
+            'required' => true,
+            'min' => 2,
+            'max' => 20,
+            'unique' => 'users'
+        ),
+        'email' => array(
+            'required' => true,
+            'min' => 9,
+            'max' => 50
+        ),
+        'Password' => array(
+            'required' => true,
+            'min' => 3,
+            'max' => 20
+        )
+    ));
+
+    if($validation->passed()){
+        $user = new User();
+         $salt = Hash::salt(32);
+    
+        try {
+            $user->create(array(
+                'Username' => Input::get('Username'),
+                'password' => Hash::make(Input::get('Password'), $salt),
+                'salt' => $salt,
+                'email' => Input::get('email'),
+                'joined' => date('Y-m-d H:i:s'),
+                'Group' => 1
+            ));
+
+            Session::flash('home', 'You have been registered and now cam log in!');
+            Redirect::to('index.php');
+
+        } catch(Exception $e) {
+            die($e->getMessage());
+        }
+    } else {
+        foreach($validation->errors() as $error){
+            echo $error, '<br>';
+            }
+        }
+    }
+}
+?>
+
 <body>
         <div class="header">
             <img src="Logo2.PNG" alt="Logoja">
             <h3>WELCOME TO DELICIOUSNESS, WHERE COOKING MEETS HAPPINESS</h3>
-            <h3>About Us</h3>
+            <h3>Login & Register</h3>
         </div>
 
     <nav class="navbar">
@@ -45,17 +101,17 @@
           </a>
      </li>
         <li class="nav-item">
-           <a href="Register.php" class="nav-link">
-            <svg 
-            aria-hidden="true" 
-            focusable="false" 
-            data-prefix="fas" 
-            data-icon="sign-in-alt" 
-            class="svg-inline--fa fa-sign-in-alt fa-w-16" 
-            role="img" xmlns="http://www.w3.org/2000/svg" 
-            viewBox="0 0 512 512"><path fill="currentColor" d="M416 448h-84c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h84c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32h-84c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h84c53 0 96 43 96 96v192c0 53-43 96-96 96zm-47-201L201 79c-15-15-41-4.5-41 17v96H24c-13.3 0-24 10.7-24 24v96c0 13.3 10.7 24 24 24h136v96c0 21.5 26 32 41 17l168-168c9.3-9.4 9.3-24.6 0-34z"
-                class="fa-primary"></path></svg>
-            <span class="link-text">Register</span>
+            <a href="AboutUs.php" class="nav-link">
+                <svg 
+                aria-hidden="true" 
+                focusable="false" 
+                data-prefix="fas" 
+                data-icon="user"
+                 class="svg-inline--fa fa-user fa-w-14" 
+                 role="img" xmlns="http://www.w3.org/2000/svg" 
+                 viewBox="0 0 448 512"><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"
+                    class="fa-primary"></path></svg>
+            <span class="link-text">About Us</span>
             </a>
         </li>
         <li class="nav-item">
@@ -76,38 +132,31 @@
     </nav>
 
     <main>
-        <div class="box">
-            <div class="content">
-                 <h3>We are Deliciousness</h3>
-                 <p>
-                    Deliciousness is a cooking portal that has some of the best cooking recipes
-                    <br>
-                    that one can find on the internet worldwide. 
-                    <br>
-                    Easy to make and delicious, these recipes do kill boredom and give our Users
-                    <br>
-                    a tasty dish in the end, these recipes can be made by anyone and in every home.
-                    <br>
-                    Filled with the love of all our team members, we wish that these recipes will
-                    <br>
-                    find their way in your home and make your day and your family's day brighter
-                    <br>
-                    and aswell tastier, for a sweet taste for the day makes the day sweeter!
-                    <br>
-                    We also accept all the help we can get, if you want to become a member, register 
-                    <br>
-                    and contact us with your best, delicious and creative ideas for a recipe 
-                    <br>
-                    so we can review it and most possibly put it on our portal!
-                    <br>
-                    <b>May your cooking go well, with love - Deliciousness team!</b>
-                 </p>
+    <div class="LoginContainer">
+    <div></div>
+    <div></div>
+    <div class="LoginRegister">
+        <div class="LoginBox">
+        <form action="" method="post">  
+            <div class="Login">   
+                <label>Username:</label>
+                <input type="text" placeholder=" username..." id="Username" value="<?php echo escape(Input::get('Username')); ?>" name="Username">
+                <label>Email:</label>
+                <input type="email" name="email" placeholder="email..." value="<?php echo escape(Input::get('email')); ?>" id="email">
+                <label>Password:</label>
+                <input type="Password" placeholder=" password..." id="Password" value="<?php echo escape(Input::get('Password')); ?>" name="Password">
+                <input type="hidden" name="token" value="<?php echo Token::generate();?>">
+                <button onclick="validateRegister()" id="LRButton">Register</button>     
             </div>
+            </form>
         </div>
+    </div>
+</div>
     </main>
     <footer>
         <h3> Always start out with a larger pot than what you think you need. — Julia Child </h3>
         <p><b>@Ubt 2020 - <a href="https://github.com/ermalratkoceriII/Ermal-Ratkoceri">GitRepo</b></p>
     </footer>
+    <script src="Js/Login.js"></script>
 </body>
 </html>

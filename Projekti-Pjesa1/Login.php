@@ -7,46 +7,36 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<?php
+<?php 
 require_once 'core/Init.php';
-
 
 if(Input::exists()){
     if(Token::check(Input::get('token'))){
 
-    $validate = new Validate();
-    $validation = $validate->check($_POST, array(
-        'Username' => array(
-            'required' => true,
-            'min' => 2,
-            'max' => 20,
-            'unique' => 'users'
-        ),
-        'email' => array(
-            'required' => true,
-            'min' => 9,
-            'max' => 50
-        ),
-        'Password' => array(
-            'required' => true,
-            'min' => 3,
-            'max' => 20
-        )
-    ));
+     $validate = new Validate();
+     $validation = $validate->check($_POST, array(
+        'username' => array('required' => true),
+        'password' => array('required' => true)
+     ));
 
-    if($validation->passed()){
-        Session::flash('success', 'You registered successfully!');
-        header('Location : index.php');
-    } else {
-        foreach($validation->errors() as $error){
-            echo $error, '<br>';
-            }
+     if($validation->passed()){
+        $user = new User();
+        $login = $user->login(Input::get('Username'), Input::get('Password'));
+     
+        if($login){
+            echo 'success';
+        } else {
+            echo '<p> Login Failed! </p>';
         }
+
+    } else {
+         foreach($validation->errors() as $error){
+            echo $error, '<br>';
+         }
+     }
     }
 }
-
 ?>
-
 
 <body>
         <div class="header">
@@ -100,39 +90,40 @@ if(Input::exists()){
             <span class="link-text">About Us</span>
             </a>
         </li>
+        <li class="nav-item">
+           <a href="Register.php" class="nav-link">
+            <svg 
+            aria-hidden="true" 
+            focusable="false" 
+            data-prefix="fas" 
+            data-icon="sign-in-alt" 
+            class="svg-inline--fa fa-sign-in-alt fa-w-16" 
+            role="img" xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 512 512"><path fill="currentColor" d="M416 448h-84c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h84c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32h-84c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h84c53 0 96 43 96 96v192c0 53-43 96-96 96zm-47-201L201 79c-15-15-41-4.5-41 17v96H24c-13.3 0-24 10.7-24 24v96c0 13.3 10.7 24 24 24h136v96c0 21.5 26 32 41 17l168-168c9.3-9.4 9.3-24.6 0-34z"
+                class="fa-primary"></path></svg>
+            <span class="link-text">Register</span>
+            </a>
+        </li>
         </ul>
     </nav>
 
     <main>
     <div class="LoginContainer">
-    <div></div>
+    <div></div><div></div>
 <div class="LoginRegister">
     <div class="LoginBox">
+    <form action="" method="post">  
         <div class="Login" >
                 <label>Username:</label>
-                <input type="text" placeholder=" username..." id="LogUser">
+                <input type="text" autocomplete="off" placeholder=" username..." id="username" name="username">
                 <label>Password:</label>
-                <input type="Password" placeholder=" password..." id="LogPass">
+                <input type="Password" autocomplete="off" placeholder=" password..." id="password" name="password">
+                <input type="hidden" name="token" value="<?php echo Token::generate();?>">
                 <button onclick="validateLogin()" id="LRButton">Login</button>        
         </div>
+        </form>
     </div>
 </div>
-    <div class="LoginRegister">
-        <div class="LoginBox">
-        <form action="" method="post">  
-            <div class="Login">   
-                <label>Username:</label>
-                <input type="text" placeholder=" username..." id="Username" value="<?php echo escape(Input::get('Username')); ?>" name="Username">
-                <label>Email:</label>
-                <input type="email" name="email" placeholder="email..." value="<?php echo escape(Input::get('email')); ?>" id="email">
-                <label>Password:</label>
-                <input type="Password" placeholder=" password..." id="Password" value="<?php echo escape(Input::get('Password')); ?>" name="Password">
-                <input type="hidden" name="token" value="<?php echo Token::generate();?>">
-                <button onclick="validateRegister()" id="LRButton">Register</button>     
-            </div>
-            </form>
-        </div>
-    </div>
 </div>
     </main>
     <footer>
