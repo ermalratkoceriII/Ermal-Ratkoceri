@@ -21,7 +21,7 @@ if(Input::exists()){
 
      if($validation->passed()){
         $user = new User();
-        $login = $user->login(Input::get('Username'), Input::get('Password'));
+        $login = $user->login(Input::get('username'), Input::get('password'));
      
         if($login){
             echo 'success';

@@ -21,7 +21,6 @@ class User {
         if($user){
             $field = (is_numeric($user)) ? 'id' : 'username';
             $data = $this->_db->get('users', array($field, '=', $user));
-        
             if($data->count()){
                 $this->_data = $data->first();
                 return true;
@@ -32,18 +31,16 @@ class User {
 
     public function login($username = null, $password = null) {
         $user = $this->find($username);
-     
         if($user){
             if($this->data()->password === Hash::make($password, $this->data()->salt)){
                 echo 'ok';
             }
         }
-
+        
         return false;
     }
 
     private function data(){
         return $this->_data;
     }
-
 }
