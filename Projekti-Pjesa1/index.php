@@ -14,6 +14,24 @@ if(Session::exists('home')){
     echo '<p>' . Session::flash('home') . '</p>';
 }
 
+$user = new User();
+if($user->isLoggedIn()){
+  ?>
+  <p>Hello <a href='Profile.php?user=<?php echo escape($user->data()->Username); ?>'><?php echo escape($user->data()->Username); ?> </a>!</p>
+    
+    <a href="logout.php"> Log out</a>
+
+  <?php
+
+    if($user->hasPermission('admin')){
+        echo '<p> you are an admin!</p>';
+    } else if ($user->hasPermission('Standard User')){
+        echo '<p> you are a Standard User!</p>';
+    }
+
+} else {
+    echo '<p>You need ot <a href="Login.php">Log in</a> or <a href="Register.php">register</a>';
+}
 ?>
 <body>
         <div class="header">

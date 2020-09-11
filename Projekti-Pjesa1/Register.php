@@ -35,7 +35,7 @@ if(Input::exists()){
 
     if($validation->passed()){
         $user = new User();
-         $salt = Hash::salt(32);
+         $salt = '';
     
         try {
             $user->create(array(
