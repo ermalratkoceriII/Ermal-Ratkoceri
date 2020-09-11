@@ -6,6 +6,49 @@
     <title>Contact Us</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+<?php 
+
+
+require_once 'core/Init.php';
+
+if(Input::exists()){
+   
+
+    $validate = new Validate();
+    $validation = $validate->check($_POST, array(
+        'Username' => array(
+            'required' => true,
+            'min' => 2,
+            'max' => 20
+        ),
+        'Ticket' => array(
+            'required' => true,
+            'min' => 9,
+            'max' => 154
+        )
+    ));
+
+    if($validation->passed()){
+        $ticket = new Ticket();
+        try{
+
+            $ticket->create(array(
+                'username' => Input::get('Username'),
+                'ticket' => Input::get('Ticket')
+            ));
+
+        } catch (Exception $e){
+            die($e->getMessage());
+        }
+    } else {
+        print_r($validation->errors());
+    }
+
+
+}
+
+
+?>
 <body>
         <div class="header">
             <img src="Logo2.PNG" alt="Logoja">
@@ -89,14 +132,16 @@
             </p>
            </div>
        </div>
+       <form action="" method="post">
        <div class="box" id="Contact">
         <label>Username:</label>
-        <input type="text" placeholder=" username..." id="User">
+        <input type="text" placeholder=" username..." id="Username" name="Username">
         <label>Recipe</label>
-        <textarea type="textarea" id='Recipe' placeholder="Write your recipe ingredients! (154 chars)"></textarea>
+        <textarea type="textarea" name="Ticket" id='Ticket' placeholder="Write your recipe ingredients! (154 chars)"></textarea>
         <button name="ContactButtons" onclick="CreateTicket()">Post</button>  
-        <button name="ContactButtons" id="EditButon" onclick="CreateTicket()">Edit</button>           
+           
    </div>
+</form>
        </div>
     </main>
 

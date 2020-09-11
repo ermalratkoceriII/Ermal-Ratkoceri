@@ -69,29 +69,7 @@
 
     <div class="box">
             <div class="content">
-            <?php
 
-require_once 'core/Init.php';
-
-if(!$username = Input::get('user')){
-    Redirect::to('index.php');
-} else {
-    $user = new User($username);
-    if(!$user->exists()){
-        Redirect::to(404);
-    } else {
-        $data = $user->data();
-    }
-    ?>
-
-    <h3>User Profile</h3>
-    <p>Email: <?php echo escape($data->email); ?> </p>
-    <p>Username: <?php echo escape($data->Username); ?> </p>
-    <p>Joined: <?php echo escape($data->joined); ?> </p>
-    <p>Group: <?php echo escape($data->Group); ?> </p>
-    <?php
-}
-?>
             </div>
         </div>
 
