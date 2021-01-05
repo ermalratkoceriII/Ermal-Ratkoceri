@@ -204,6 +204,13 @@ if($user->isLoggedIn()){
     {
         ?>
         <a href='Dashboard.php'>Dashboard</a>
+        <p>Admin User</p>
+        <?php
+    }  
+    if(!$user->hasPermission('admin'))
+    {
+        ?>
+        <p>Standard User</p>
         <?php
     } 
 } 

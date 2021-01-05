@@ -72,13 +72,18 @@
     <div class="box">
             <div class="content">
             <?php
-       
        require_once 'core/Init.php';
        $db = DB::getInstance();
        $myArray = $db->get('tickets', ['1', '=', '1'])->results();
-                
+
        ?> 
-          <p><?php print_r($myArray);?> </p>
+          <p><?php 
+            $length = count($myArray);
+          for($i = 0; $i < $length; $i++){
+          print_r($myArray[$i]);
+          ?> </br> <?php
+          }
+          ?></p>
         <?php
         ?>
             </div>
