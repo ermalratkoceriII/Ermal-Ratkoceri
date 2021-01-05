@@ -1,1 +1,0 @@
-# Ermal-Ratkoceri
