@@ -9,6 +9,7 @@
 <?php 
 require_once 'core/Init.php';
 ?>
+<?php error_reporting (E_ALL ^ E_NOTICE); ?>
 <body>
         <div class="header">
             <img src="Logo2.png" alt="Logoja">
@@ -199,13 +200,15 @@ if($user->isLoggedIn()){
     <a href="logout.php"> Log out</a>
 
   <?php
-    if($user->hasPermission('admin')){
+    if($user->hasPermission('admin'))
+    {
         ?>
         <a href='Dashboard.php'>Dashboard</a>
         <?php
     } 
-} else {
-    echo '<p>You need ot <a href="Login.php">Log in</a> or <a href="Register.php">register</a>';
+} 
+else{
+    echo '<p>You need to <a href="Login.php">Log in</a> or <a href="Register.php">register</a>';
 }
 ?>
           
