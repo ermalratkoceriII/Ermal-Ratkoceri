@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ermal\\source\\repos\\ResumeApp\\ResumeApp\\ResumeApp.csproj": {}
+    "C:\\Users\\ermal\\Desktop\\GitRepo\\Ermal-Ratkoceri\\ResumeApp\\ResumeApp\\ResumeApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ermal\\source\\repos\\ResumeApp\\ResumeApp\\ResumeApp.csproj": {
+    "C:\\Users\\ermal\\Desktop\\GitRepo\\Ermal-Ratkoceri\\ResumeApp\\ResumeApp\\ResumeApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ermal\\source\\repos\\ResumeApp\\ResumeApp\\ResumeApp.csproj",
+        "projectUniqueName": "C:\\Users\\ermal\\Desktop\\GitRepo\\Ermal-Ratkoceri\\ResumeApp\\ResumeApp\\ResumeApp.csproj",
         "projectName": "ResumeApp",
-        "projectPath": "C:\\Users\\ermal\\source\\repos\\ResumeApp\\ResumeApp\\ResumeApp.csproj",
+        "projectPath": "C:\\Users\\ermal\\Desktop\\GitRepo\\Ermal-Ratkoceri\\ResumeApp\\ResumeApp\\ResumeApp.csproj",
         "packagesPath": "C:\\Users\\ermal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ermal\\source\\repos\\ResumeApp\\ResumeApp\\obj\\",
+        "outputPath": "C:\\Users\\ermal\\Desktop\\GitRepo\\Ermal-Ratkoceri\\ResumeApp\\ResumeApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ermal\\AppData\\Roaming\\NuGet\\NuGet.Config",
