@@ -6,58 +6,44 @@
 
 
 
-<h1>@Html.DisplayFor(model => model.FullName)'s Cv</h1>
+<h1> <b> @Html.DisplayFor(model => model.FullName)'s </b> Resume</h1>
 
 <div>
 
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-              @Html.DisplayNameFor(model => model.FullName)
-        </dt>
-        <dd class = "col-sm-10">
-           <b> @Html.DisplayFor(model => model.FullName) </b> 
-        </dd>
-        <dt class = "col-sm-2">
-           @Html.DisplayNameFor(model => model.Email) 
-        </dt>
-        <dd class = "col-sm-10">
-           @Html.DisplayFor(model => model.Email) 
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Birthday) 
+            @Html.DisplayNameFor(model => model.FullName) </br>
+            <b> @Html.DisplayFor(model => model.FullName) </b>
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Birthday) 
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
-        <dd class = "col-sm-10">
-           (+383)@Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-        <dt class = "col-sm-2">
-           @Html.DisplayNameFor(model => model.AboutMe) 
-        </dt>
-        <dd class = "col-sm-10">
+            <b> @Html.DisplayNameFor(model => model.AboutMe) </b> </br>
             @Html.DisplayFor(model => model.AboutMe)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Experience) 
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email) </br>
+            @Html.DisplayFor(model => model.Email) </br>
+          </br>  @Html.DisplayNameFor(model => model.Birthday) </br>
+            @Html.DisplayFor(model => model.Birthday) </br>
+           </br> @Html.DisplayNameFor(model => model.PhoneNumber) </br>
+            (+383)@Html.DisplayFor(model => model.PhoneNumber)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Experience)
+        <dd class="col-sm-10">
+            <b> @Html.DisplayNameFor(model => model.Experience) </b> </br>
+               @Html.DisplayFor(model => model.Experience)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Skills) 
+        <dt class="col-sm-2">
+        
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
+          <b>  @Html.DisplayNameFor(model => model.Skills) </b></br>
             @Html.DisplayFor(model => model.Skills)
         </dd>
-        <dt class = "col-sm-2">
-           @Html.DisplayNameFor(model => model.Hobbies) 
+        <dt class="col-sm-2">
+        
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
+            <b> @Html.DisplayNameFor(model => model.Hobbies) </b> </br>
             @Html.DisplayFor(model => model.Hobbies)
         </dd>
     </dl>

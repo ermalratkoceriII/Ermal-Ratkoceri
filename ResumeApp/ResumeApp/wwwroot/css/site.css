@@ -61,14 +61,16 @@ html {
 
 .row {
     text-align: center;
+   
 }
 
 dd {
-    border-top: gray 1px groove;
+    border-top: #DCDCDC 1px groove;
 }
 
 dt {
-    border-top: gray 1px groove;
+    background: #DCDCDC;
+    font-size: 14px;
 }
 
 body {

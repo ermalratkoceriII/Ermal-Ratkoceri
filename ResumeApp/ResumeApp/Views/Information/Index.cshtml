@@ -19,9 +19,6 @@
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Birthday)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.PhoneNumber)
             </th>
             <th></th>
@@ -37,12 +34,8 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Birthday)
-            </td>
-            <td>
               (+383)@Html.DisplayFor(modelItem => item.PhoneNumber)
             </td>
-   
             <td>
                 <a asp-action="Details" asp-route-id="@item.ID">Details</a>
             </td>
