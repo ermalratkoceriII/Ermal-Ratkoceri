@@ -7,9 +7,10 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #0366d6;
 }
 
 .btn-primary {
@@ -27,7 +28,8 @@ a {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
+    
 }
 @media (min-width: 768px) {
   html {
@@ -72,7 +74,8 @@ dt {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
-    background: linear-gradient(90deg, lightgray, white);
+    background: linear-gradient(360deg, #DCDCDC, #F5F5F5);
+    font-family: 'Times New Roman';
 }
 .footer {
   position: absolute;
